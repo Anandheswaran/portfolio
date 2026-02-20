@@ -34,6 +34,35 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const captionText = document.getElementById('caption');
+    const projectImages = document.querySelectorAll('.project-img');
+
+    projectImages.forEach(img => {
+        img.onclick = function () {
+            lightbox.style.display = "block";
+            lightboxImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+    });
+
+    const closeLightbox = document.querySelector('.close-lightbox');
+    closeLightbox.onclick = function () {
+        lightbox.style.display = "none";
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Close on outside click
+    lightbox.onclick = function (e) {
+        if (e.target === lightbox || e.target === lightboxImg) {
+            lightbox.style.display = "none";
+            document.body.style.overflow = 'auto';
+        }
+    }
+
     // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
