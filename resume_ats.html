@@ -6,78 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Anandheswaran B</title>
     <style>
+        :root {
+            --primary-color: #000;
+            --secondary-color: #444;
+            --border-color: #333;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.5;
+            font-family: var(--font-main);
+            line-height: 1.25;
             color: #333;
             max-width: 800px;
+            /* Narrower for better print fit */
             margin: 0 auto;
-            padding: 40px;
+            padding: 15px 35px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         h1 {
-            margin-bottom: 5px;
-            color: #000;
-        }
-
-        .contact-info {
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .contact-info a {
-            color: #004a99;
-            /* Professional Blue */
-            text-decoration: none;
-            border-bottom: 1px solid #004a99;
-        }
-
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            font-size: 1.25rem;
+            margin: 0;
+            font-size: 1.6rem;
+            color: var(--primary-color);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .section {
-            margin-bottom: 20px;
+        .role {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin: 0 0 3px 0;
+            font-weight: 600;
         }
 
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1rem;
+        .contact-info {
+            font-size: 0.8rem;
+            color: #555;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+        }
+
+        .contact-info a {
+            color: #004a99;
+            /* Professional Link Blue */
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #002d5e;
+            text-decoration: underline;
+        }
+
+        h2 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+        }
+
+        .section {
+            margin-bottom: 8px;
+        }
+
+        .item-header {
             display: flex;
             justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0px;
         }
 
-        .company {
+        .item-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .item-meta {
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .company-info {
+            display: flex;
+            justify-content: space-between;
             font-style: italic;
             color: #555;
-        }
-
-        .date {
-            font-weight: normal;
-            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 2px;
         }
 
         ul {
-            margin-top: 10px;
-            padding-left: 20px;
+            margin-top: 0px;
+            margin-bottom: 3px;
+            padding-left: 15px;
         }
 
         li {
-            margin-bottom: 5px;
+            margin-bottom: 1px;
+            font-size: 0.85rem;
         }
 
-        .skills-list {
-            font-weight: bold;
+        .skills-list strong {
+            color: #000;
+        }
+
+        p {
+            margin: 2px 0;
+            font-size: 0.85rem;
         }
 
         @media print {
             body {
-                padding: 0;
+                padding: 5px 25px;
             }
 
             .no-print {
@@ -90,13 +140,14 @@
 <body>
     <header>
         <h1>Anandheswaran B</h1>
+        <div class="role">Data Analyst | Python Developer | Machine Learning Enthusiast</div>
         <div class="contact-info">
-            <strong>Marthandam, Kanyakumari, India | +91 9384168439</strong><br>
-            Email: <a href="mailto:anandheswaran07@gmail.com"><strong>anandheswaran07@gmail.com</strong></a><br>
-            LinkedIn: <a
-                href="https://www.linkedin.com/in/anandheswaran-b-a27640298"><strong>linkedin.com/in/anandheswaran-b</strong></a><br>
-            Portfolio: <a
-                href="https://anandheswaran.github.io/portfolio/"><strong>anandheswaran.github.io/portfolio</strong></a>
+            <div>Phone: +91 9384168439 | Email: <a href="mailto:anandheswaran07@gmail.com">anandheswaran07@gmail.com</a>
+            </div>
+            <div>Location: Kanyakumari, Tamil Nadu, India</div>
+            <div>LinkedIn: <a href="https://www.linkedin.com/in/anandheswaran-b-a27640298">anandheswaran-b-a27640298</a>
+                | Portfolio: <a href="https://anandheswaran.github.io/portfolio/">anandheswaran.github.io/portfolio</a>
+            </div>
         </div>
     </header>
 
@@ -110,100 +161,120 @@
 
     <div class="section">
         <h2>Technical Skills</h2>
-        <p><span class="skills-list">Programming:</span> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), SQL
+        <p class="skills-list"><strong>Programming:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn),
+            SQL
             (MySQL, Joins, Aggregations, Subqueries).</p>
-        <p><span class="skills-list">Data Visualization:</span> Power BI (DAX, Power Query), Tableau, Microsoft Excel
+        <p class="skills-list"><strong>Data Visualization:</strong> Power BI (DAX, Power Query), Tableau, Microsoft
+            Excel
             (Pivot Tables, VLOOKUP, Advanced Formulas).</p>
-        <p><span class="skills-list">Core Competencies:</span> Exploratory Data Analysis (EDA), ETL Pipelines, Data
+        <p class="skills-list"><strong>Core Competencies:</strong> Exploratory Data Analysis (EDA), ETL Pipelines, Data
             Preprocessing, Machine Learning (Regression, Classification), KPI Development, Statistical Analysis.</p>
     </div>
 
     <div class="section">
         <h2>Internship Experience</h2>
-        <div class="job-title">
-            <span>Data Analytics Intern</span>
-            <span class="date">Aug 2025 - Oct 2025</span>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Data Analytics Intern</span>
+                <span class="item-meta">Aug 2025 - Oct 2025</span>
+            </div>
+            <div class="company-info">
+                <span>Besant Technologies</span>
+                <span>Chennai, India</span>
+            </div>
+            <ul>
+                <li>Developed interactive Power BI dashboards using DAX measures and KPIs to track revenue and sales
+                    trends.</li>
+                <li>Executed complex SQL queries (Joins, Aggregations) to manage and extract insights from large
+                    datasets.</li>
+                <li>Performed automated ETL, data cleaning, and sales analytics reporting to improve data accuracy.</li>
+            </ul>
         </div>
-        <div class="company">Besant Technologies</div>
-        <ul>
-            <li>Developed interactive Power BI dashboards using DAX measures and KPIs to track revenue and sales trends.
-            </li>
-            <li>Executed complex SQL queries (Joins, Aggregations) to manage and extract insights from large datasets.
-            </li>
-            <li>Performed automated ETL, data cleaning, and sales analytics reporting to improve data accuracy.</li>
-        </ul>
 
-        <div class="job-title">
-            <span>Data Analytics Intern</span>
-            <span class="date">June 2025 - July 2025</span>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Data Analytics Intern</span>
+                <span class="item-meta">June 2025 - July 2025</span>
+            </div>
+            <div class="company-info">
+                <span>NoviTech R&D Pvt. Ltd.</span>
+                <span>Tamil Nadu, India</span>
+            </div>
+            <ul>
+                <li>Built automated Excel reports and dynamic Power BI dashboards to visualize product category
+                    performance.</li>
+                <li>Performed detailed trend analysis by cleaning and transforming raw datasets using Power Query.</li>
+                <li>Optimized data pipelines to reduce manual reporting time by streamlining data wrangling processes.
+                </li>
+            </ul>
         </div>
-        <div class="company">NoviTech R&D Pvt. Ltd.</div>
-        <ul>
-            <li>Built automated Excel reports and dynamic Power BI dashboards to visualize product category performance.
-            </li>
-            <li>Performed detailed trend analysis by cleaning and transforming raw datasets using Power Query.</li>
-            <li>Optimized data pipelines to reduce manual reporting time by streamlining data wrangling processes.</li>
-        </ul>
     </div>
 
     <div class="section">
         <h2>Projects</h2>
-        <div class="job-title">
-            <span>Supermarket Sales Analysis System</span>
-            <span>Python, Scikit-learn</span>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Supermarket Sales Analysis System</span>
+                <span class="item-meta">Python, Scikit-learn</span>
+            </div>
+            <ul>
+                <li>Developed a comprehensive desktop application for analyzing supermarket sales using Python and
+                    Tkinter.</li>
+                <li>Built Machine Learning models (Linear Regression, Random Forest) to predict sales trends with high
+                    accuracy.</li>
+                <li>Automated data cleaning and EDA to identify seasonal trends and inventory requirements.</li>
+            </ul>
         </div>
-        <ul>
-            <li>Developed a comprehensive desktop application for analyzing supermarket sales using Python and Tkinter.
-            </li>
-            <li>Built Machine Learning models (Linear Regression, Random Forest) to predict sales trends with high
-                accuracy.</li>
-            <li>Automated data cleaning and EDA to identify seasonal trends and inventory requirements.</li>
-        </ul>
 
-        <div class="job-title">
-            <span>Sales Analytics & BI Dashboard</span>
-            <span>Power BI, DAX</span>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Sales Analytics & BI Dashboard</span>
+                <span class="item-meta">Power BI, DAX</span>
+            </div>
+            <ul>
+                <li>Designed a premium Power BI dashboard to monitor revenue distribution and regional sales
+                    performance.</li>
+                <li>Utilized Power Query for data transformation and advanced DAX for custom business metrics.</li>
+            </ul>
         </div>
-        <ul>
-            <li>Designed a premium Power BI dashboard to monitor revenue distribution and regional sales performance.
-            </li>
-            <li>Utilized Power Query for data transformation and advanced DAX for custom business metrics.</li>
-        </ul>
 
-        <div class="job-title">
-            <span>Sales Analytics Dashboard – Excel</span>
-            <span>Pivot Tables, VLOOKUP</span>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Sales Analytics Dashboard – Excel</span>
+                <span class="item-meta">Pivot Tables, VLOOKUP</span>
+            </div>
+            <ul>
+                <li>Created an interactive dashboard using Excel Pivot Tables and charts to analyze category-wise sales.
+                </li>
+                <li>Implemented dynamic date filtering using slicers to provide real-time business performance tracking.
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li>Created an interactive dashboard using Excel Pivot Tables and charts to analyze category-wise sales.
-            </li>
-            <li>Implemented dynamic date filtering using slicers to provide real-time business performance tracking.
-            </li>
-        </ul>
     </div>
 
     <div class="section">
         <h2>Education</h2>
-        <div class="job-title">
-            <span>Bachelor of Engineering (ECE)</span>
-            <span class="date">2021 - 2025</span>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Bachelor of Engineering (ECE)</span>
+                <span class="item-meta">2021 - 2025</span>
+            </div>
+            <div class="company-info">
+                <span>Rohini College of Engineering & Technology</span>
+                <span>CGPA: 6.8 / 10.0</span>
+            </div>
+            <p style="font-size: 0.95rem; margin-top: 5px;">Gained a strong foundation in analytical thinking,
+                electronics, and technical problem-solving.</p>
         </div>
-        <div class="company">Rohini College of Engineering & Technology</div>
-        <p>Gained a strong foundation in analytical thinking, electronics, and technical problem-solving. (CGPA: 6.8/10)
-        </p>
     </div>
 
     <div class="section">
         <h2>Certifications</h2>
         <ul>
             <li><strong>AI-Driven Data Analyst</strong> - TN Skill Corporation (Govt. of Tamil Nadu)</li>
-            <li><strong>1st Prize, Technical Quiz</strong> - Electrobolitz 2K24 (National Symposium)</li>
         </ul>
     </div>
 
-    <div class="no-print" style="margin-top: 50px; text-align: center; color: #888;">
-        <p><em>Tip: Open this file in your browser and press Ctrl+P to save as a 100% ATS-friendly PDF.</em></p>
-    </div>
 </body>
 
 </html>
